@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Store</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/mainStyle.css" />
+  </head>
+  <body>
+    <header id="main">
+      <nav>
+        <section class="container">
+          <a href="index.html">
+            <img src="images/logo.png" alt="" id="logo" />
+          </a>
+          <ul>
+            <li>
+              <a href="#main">Home</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#menu">Menu</a>
+            </li>
+            <li>
+              <a href="categories.html">Categories</a>
+            </li>
+            <li>
+              <a href="cards.html">Cards <span id="counter"></span></a>
+            </li>
+            <li>
+              <a href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </section>
+      </nav>
+      <i class="fa-solid fa-angle-left fa-9x icon" id="leftArrow"></i>
+      <i class="fa-solid fa-angle-right fa-9x icon" id="rightArrow"></i>
+      <section class="container content">
+        <h1>Enjoy Our <br />Delicious Meal</h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+          beatae suscipit recusandae illum porro quia maxime velit, placeat
+          totam, perferendis aliquam error repudiandae eius quas id cumque
+          commodi unde ipsum?
+        </p>
+      </section>
+    </header>
+
+    <section id="about">
+      <section class="container">
+        <h1>About Us</h1>
+        <!-- <hr> -->
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta
+          debitis eligendi aliquam quibusdam? Ex suscipit sed magnam odio!
+          Mollitia, iure! Sequi quo rem tempora alias delectus itaque eos fugit
+          dolor!
+        </p>
+      </section>
+    </section>
+
+    <section id="menu">
+      <!-- -->
+      <section class="content">
+        <h1>Our Menu</h1>
+        <div id="menuBtn">
+          <button>All</button>
+          <!-- <button>Steak</button>
+          <button>Pasta</button>
+          <button>Pizza</button>
+          <button>Drinkes</button> -->
+        </div>
+
+        <section class="container" id="main-section"></section>
+      </section>
+    </section>
+
+    <footer>
+      <section class="container">
+        <div>
+          <h2>Restaurant</h2>
+          <ol>
+            <li>
+              <a href="#!"
+                ><i class="fa-solid fa-angle-right fa-9x icon footerArrow"></i>
+                About Us</a
+              >
+            </li>
+            <li>
+              <a href="#!"
+                ><i class="fa-solid fa-angle-right fa-9x icon footerArrow"></i>
+                Contact Us</a
+              >
+            </li>
+            <li>
+              <a href="#!"
+                ><i class="fa-solid fa-angle-right fa-9x icon footerArrow"></i>
+                Rservation</a
+              >
+            </li>
+            <li>
+              <a href="#!"
+                ><i class="fa-solid fa-angle-right fa-9x icon footerArrow"></i>
+                Privacy policy</a
+              >
+            </li>
+          </ol>
+        </div>
+
+        <div>
+          <h2>Services</h2>
+          <ol>
+            <li>
+              <a href="#!">
+                <i class="fa-solid fa-angle-right fa-9x icon footerArrow"></i>
+                Cooked
+              </a>
+            </li>
+            <li>
+              <a href="#!">
+                <i class="fa-solid fa-angle-right fa-9x icon footerArrow"></i>
+                Deliver
+              </a>
+            </li>
+            <li>
+              <a href="#!"
+                ><i class="fa-solid fa-angle-right fa-9x icon footerArrow"></i>
+                Quality Food</a
+              >
+            </li>
+            <li>
+              <a href="#!"
+                ><i class="fa-solid fa-angle-right fa-9x icon footerArrow"></i>
+                Drinkes</a
+              >
+            </li>
+          </ol>
+        </div>
+        <div>
+          <h2>Contact us</h2>
+          <ol>
+            <li>
+              <i class="fa-solid fa-angle-right fa-9x icon footerArrow"></i> 123
+              Street, Benha, Egypt
+            </li>
+            <li>
+              <a href="tel:+201096254594"
+                ><i class="fa-solid fa-angle-right fa-9x icon footerArrow"></i>
+                +20 109 625 4594</a
+              >
+            </li>
+            <li>
+              <a href="mailto:custom@gmail.com"
+                ><i class="fa-solid fa-angle-right fa-9x icon footerArrow"></i>
+                custom@gmail.com</a
+              >
+            </li>
+            <!-- <li>icons</li> -->
+          </ol>
+        </div>
+
+        <div>
+          <h2>Openning</h2>
+          <ol>
+            <li>Monday - Saturday</li>
+            <li>08AM - 12AM</li>
+            <li>Sunday</li>
+            <li>12PM - 08PM</li>
+          </ol>
+        </div>
+      </section>
+      <p>
+        Copyright ©2022 All rights reserved | DESIGN BY
+        <span style="color: #fea116">Eman Mohamed</span>
+      </p>
+    </footer>
+    <i id="upArrow" class="fa-solid fa-arrow-down"></i>
+  </body>
+  <script src="./js/function.js"></script>
+  <script src="./js/script.js"></script>
+  <script>
+    fetch("http://localhost:1337/api/products?populate=image")
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        let products = result.data;
+        let container = document.getElementById("main-section");
+        products.forEach((product) => {
+          product.attributes.id = product.id;
+          let newCard = createCard(product.attributes);
+          container.appendChild(newCard);
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+
+       // get all categories
+       fetch("http://localhost:1337/api/categories?populate=products.image")
+       .then((response) => {
+         return response.json();
+       })
+       .then((result) => {
+         let categories = result.data;
+         
+         let menuContainer = document.getElementById("menuBtn");
+         categories.forEach((category) => {
+          let button = document.createElement("button");
+          button.innerHTML = category.attributes.title;
+
+          button.onclick = function(){
+            let container = document.getElementById("main-section");
+            container.innerHTML = "";
+            category.attributes.products.data.forEach((product) => {
+             
+              product.attributes.id = product.id;
+             console.log(product.attributes);
+             
+              let newCard = createCard(product.attributes);
+              container.appendChild(newCard);
+            });
+          }
+          menuContainer.appendChild(button);
+         });
+       })
+       .catch((error) => {
+         console.log(error);
+       });
+
+      
+  </script>
+</html>

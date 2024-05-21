@@ -1,0 +1,81 @@
+*{
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    scroll-behavior: smooth;
+}
+#contact{
+    font-family: "Muli", sans-serif;
+}
+#contact .container {
+    text-align: center;
+    overflow: hidden;
+    padding: 85px 0;
+    font-weight: 500;
+    width: 1170px;
+    margin: auto;
+}
+
+#contact .container form{
+    width: 55%;
+    margin: 55px auto;
+}
+#contact .container input,#contact .container textarea{
+    border-radius: 25px;
+    border:1px solid #d1d1d1;
+    padding: 15px;
+    display: block;
+    margin: 15px auto;
+    width: 100%;
+}
+#contact .container textarea{
+    margin: 30px auto;
+}
+#contact .container form div{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+  
+}
+#contact .container h1 {
+    font-size: 35px;
+    font-weight: 500;
+}
+#contact .container p {
+    color: #777777;
+    width: 500px;
+    line-height: 32px;
+    margin: auto;
+}
+#contact .container form div input{
+    width: 310px;
+}
+#contact .container form button{
+    border: 1px solid #5a56ec;
+    color: white;
+    padding: 15px ;
+    font-size: 15px;
+    background-color: #5a56ec;
+    border-radius: 50px;
+    display: block;
+    margin: 15px auto;
+    width: 100%;
+}
+#contact .container .errorContainer{
+    position: relative;
+}
+#contact .container .errorContainer .errorMsg{
+    color: red;
+    position:absolute;
+    width: 170px;
+    top:57px;
+    left:0;
+    display: none;
+}
+
+
+#contact .container .errorContainer  #subjectError{
+    top:45px;
+}
+#contact .container .errorContainer #msgError{
+    top: 180px;
+}

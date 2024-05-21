@@ -1,0 +1,275 @@
+*{
+    box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: "Merriweather", serif;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.container{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* nav */
+nav{
+    position: fixed;
+    width: 100%;
+    background-color: #0f172b;
+    color: #938464;
+    top: 0;
+    z-index: 9999999999;
+    overflow: hidden;
+}
+nav .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    overflow: hidden;
+}
+
+ul, ol{
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+ul li{
+    display: inline-block;
+    font-size: 25px;
+    text-align: center;
+    overflow: hidden;
+}
+
+ul li a{
+    margin: 0 5px;
+    padding: 5px;
+    display: inline-block;
+}
+
+nav .container ul a:hover{
+    color: #d0cdc5;
+    border-bottom: 3px solid #938464;
+}
+#counter{
+    color: #fea116;
+}
+/* header */
+header{
+    background-image: url("../images/slide_1.jpg");
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+header::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1515154f;
+    overflow: hidden;
+    z-index: 0;
+}
+
+header .content{
+    position: relative;
+    color: white;
+    z-index: 1;
+    margin-top: 165px;
+}
+
+header .content h1{
+    font-family: "Nunito",sans-serif;
+    font-size: 70px;
+    font-weight: 900;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+header .content p{
+    font-size: 25px;
+    font-style: italic;
+    font-weight: 500;
+    width: 700px;
+    overflow: hidden;
+}
+
+/* about */
+#about{
+    text-align: center;
+    margin: 30px 0 60px;
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+    
+}
+
+#about h1, #menu h1{
+    font-size: 36px;
+    font-weight: 900;
+    font-style: italic;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+#about h1::after, #menu h1::after{
+    content: "";
+    border: 2px solid #938464;
+    background: #938464;
+    width: 75px;
+    overflow: hidden;
+    position: absolute;
+    top: 44px;
+    left: 617px;
+}
+
+#about p{
+    width: 600px;
+    margin: auto;
+    font-size: 25px;
+    overflow: hidden;
+    line-height: 1.8;
+}
+
+/* menu */
+#menu h1{
+    width: 90%;
+    margin: 50px auto 60px;
+    text-align: center;
+}
+
+#menu .content{
+    padding: 20px;
+    background-color: #e4e4e4;
+    text-align: center;
+    overflow: hidden;
+}
+
+#menu .content button{
+    width: 150px;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px;
+    background-color: #938464;
+    color: white;
+    font-style: italic;
+    cursor: pointer;
+}
+
+#menu .container{
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    /* justify-items: center;
+    align-items: center; */
+    gap: 35px;
+    flex-wrap: wrap;
+}
+.card{
+    width: 295px;
+    background-color: #fea116;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 14px 0px #000000ab;
+    overflow: hidden;
+    /* box-shadow: 0 1px 9px #a4a3a3; */
+}
+.card img{
+    width: 100%;
+    height: 250px;
+}
+
+.card h3{
+    font-size: 25px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+/* footer */
+footer{
+    background-color: #0f172b;
+    color: white;
+    overflow: hidden;
+}
+
+footer .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 30px auto 45px;
+}
+footer h2{
+    font-size: 25px;
+    font-style: italic;
+    color: #fea116;
+}
+
+footer ol li{
+
+    padding: 10px 0;
+    font-size: 18px;
+
+}
+footer p{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+
+/* arrows */
+
+#upArrow{
+    display: none;
+    font-size: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 88;
+    overflow: hidden;
+    transform: rotate(180deg);
+    color: white;
+    background: #fea116;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#leftArrow, #rightArrow{
+    position: absolute;
+    font-size: 39px;
+    top: 410px;
+    color: white;
+    z-index: 555;
+  }
+
+#leftArrow{
+    left: 30px;
+}
+
+#rightArrow{
+    right: 35px;
+}
+
+footer .footerArrow{
+    font-size: 15px;
+    margin-right: 5px;
+}
